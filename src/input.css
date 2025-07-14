@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "Bonzai";
+  src: url("./fonts/bonzai.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+    --font-bonzai: "Bonzai", sans-serif;
+    --font-alegreya: "Alegreya", sans-serif;
+    --color-main-text: #80001D;
+    --color-secondary-bg: #FFF3E9;
+    --color-body-bg: #FDE3D1;
+}
+
+/* @utility container-fluid {
+    /* @apply w-full lg:px-[105px] px-[20px]; 
+  } */

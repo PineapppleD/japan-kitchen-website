@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./src/output.css">
+</head>
+<body class="bg-body-bg">
+    <header class="w-full xl:px-[105px] px-[20px] md:p-[4px] flex flex-col md:flex-row justify-between items-center border border-main-text/15 py-2">
+        <!-- header logo -->
+        <div class="flex items-center gap-4">
+            <img src="./src/images/логотип.svg" alt="logo image" class="w-[68px] md:w-[50px] lg:w-[68px]">
+            <p class="text-4xl/[74%] md:text-2xl lg:text-4xl/[74%] font-bonzai text-main-text ">Foxy<br> burrow</p>
+        </div>
+        <!-- header navbar -->
+        <div class="flex items-center flex-col-reverse md:flex-row mt-8 md:mt-0">
+            <!-- search input -->
+            <div class="md:hidden xl:block w-[141px] py-1 px-2.5 bg-secondary-bg rounded-4xl relative my-4 lg:mr-10 md:my-0">
+                <input type="text" placeholder="Search" class="max-w-[85%] font-alegreya outline-none border-none text-main-text">
+                <img src="./src/images/search.svg" alt="search in site" class="absolute top-1/2 -translate-y-1/2 right-[10px] ">
+            </div>
+            <div class="hidden md:block xl:hidden">
+                <img src="./src/images/search.svg" alt="search in site" class="mr-5 cursor-pointer">
+            </div>
+            <!-- nav list -->
+            <ul class="flex items-center gap-4 lg:gap-8 flex-col md:flex-row">
+                <li class="font-alegreya text-main-text text-base md:text-[14px] lg:text-base"><a href="">Home</a></li>
+                <li class="font-alegreya text-main-text text-base md:text-[14px] lg:text-base">Menu</li>
+                <li class="font-alegreya text-main-text text-base md:text-[14px] lg:text-base">Order online</li>
+                <li class="font-alegreya text-main-text text-base md:text-[14px] lg:text-base">Book</li>
+                <li class="font-alegreya text-main-text text-base md:text-[14px] lg:text-base">Shipping and Payment</li>
+                <li class="font-alegreya text-main-text text-base md:text-[14px] lg:text-base">Contacts</li>
+            </ul>
+            <!-- <button class="lg:hidden">
+                <i class="fa-solid fa-bars text-2xl "></i>
+            </button> -->
+
+
+
+            <!-- header buttons -->
+        </div>
+        <ul class="flex items-center gap-4 md:gap-2 lg:gap-6">
+            <li class="w-[30px] md:w-[20px] lg:w-[30px]">
+                <img class="w-full" src="./src/images/heart.svg" alt="favorite food">
+            </li>
+            <li class="w-[30px] md:w-[20px] lg:w-[30px]">
+                <img class="w-full" src="./src/images/cart.svg" alt="cart">
+            </li>
+            <li class="w-[35px] md:w-[25px] lg:w-[35px]">
+                <img class="w-full" src="./src/images/userplus.svg" alt="log in">
+            </li>
+        </ul>
+    </header>
+
+    <!-- Hero section -->
+</body>
+</html>
