@@ -5,18 +5,31 @@
   font-style: normal;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&display=swap');
 
 @import "tailwindcss";
 
 @theme {
-    --font-bonzai: "Bonzai", sans-serif;
-    --font-alegreya: "Alegreya", sans-serif;
-    --color-main-text: #80001D;
-    --color-secondary-bg: #FFF3E9;
-    --color-body-bg: #FDE3D1;
+  --font-bonzai: "Bonzai", sans-serif;
+  --font-alegreya: "Alegreya Sans SC", sans-serif;
+  --color-main-text: #80001D;
+  --color-secondary-bg: #FFF3E9;
+  --color-body-bg: #FDE3D1;
+  --color-red-custom: #FE0000;
+  --breakpoint-2md: 52.5rem;
 }
 
-/* @utility container-fluid {
-    /* @apply w-full lg:px-[105px] px-[20px]; 
-  } */
+@utility text-10xl{
+  font-size: 150px;
+  line-height: 0.8;
+}
+
+@layer components {
+  .button-red {
+    @apply bg-red-custom rounded-[20px] lg:rounded-[36px] py-2 px-4 lg:py-4 lg:px-8 text-white text-[18px] lg:text-2xl font-alegreya ;
+  }
+
+  .filter-card {
+    @apply bg-secondary-bg rounded-[25px] px-6 py-1 md:px-[35px] md:py-[8px] text-[16px] md:text-2xl text-main-text;
+  }
+}

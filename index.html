@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./src/output.css">
 </head>
+
 <body class="bg-body-bg">
-    <header class="w-full xl:px-[105px] px-[20px] md:p-[4px] flex flex-col md:flex-row justify-between items-center border border-main-text/15 py-2">
+    <header
+        class="w-full xl:px-[105px] px-[20px] md:p-[4px] flex flex-col md:flex-row justify-between items-center border border-main-text/15 py-2">
         <!-- header logo -->
         <div class="flex items-center gap-4">
             <img src="./src/images/логотип.svg" alt="logo image" class="w-[68px] md:w-[50px] lg:w-[68px]">
@@ -17,9 +20,12 @@
         <!-- header navbar -->
         <div class="flex items-center flex-col-reverse md:flex-row mt-8 md:mt-0">
             <!-- search input -->
-            <div class="md:hidden xl:block w-[141px] py-1 px-2.5 bg-secondary-bg rounded-4xl relative my-4 lg:mr-10 md:my-0">
-                <input type="text" placeholder="Search" class="max-w-[85%] font-alegreya outline-none border-none text-main-text">
-                <img src="./src/images/search.svg" alt="search in site" class="absolute top-1/2 -translate-y-1/2 right-[10px] ">
+            <div
+                class="md:hidden xl:block w-[141px] py-1 px-2.5 bg-secondary-bg rounded-4xl relative my-4 lg:mr-10 md:my-0">
+                <input type="text" placeholder="Search"
+                    class="max-w-[85%] font-alegreya outline-none border-none text-main-text">
+                <img src="./src/images/search.svg" alt="search in site"
+                    class="absolute top-1/2 -translate-y-1/2 right-[10px] ">
             </div>
             <div class="hidden md:block xl:hidden">
                 <img src="./src/images/search.svg" alt="search in site" class="mr-5 cursor-pointer">
@@ -55,5 +61,118 @@
     </header>
 
     <!-- Hero section -->
+    <div
+        class="flex w-full xl:px-[105px] px-[20px] mt-10 items-center sm:items-start gap-6 sm:gap-0 flex-col sm:flex-row">
+        <!-- Hero text block -->
+        <div class="w-[90%] md:w-[49.7%] flex flex-col items-center sm:block text-center sm:text-start">
+            <h1 class="font-bonzai text-main-text  text-[88px]/[70%] lg:text-9xl xl:text-10xl">Japanese restaraunt</h1>
+            <p
+                class="text-[15px] sm:text-[20px] xl:text-2xl text-main-text font-alegreya mt-5 mb-5 lg:mt-12 lg:mb-16 w-[90%] lg:w-[70%]">
+                Welcome to our Japanese cuisine restaurant !
+                We are proud to offer authentic Japanese dishes prepared using only fresh and quality ingredients.
+            </p>
+            <div>
+                <button class="button-red mr-4">Reserve a table</button>
+                <button class="button-red ">Order</button>
+            </div>
+        </div>
+        <!-- Hero japanese vertical text -->
+        <p class="text-8xl xl:text-[115px]/[113%] text-main-text/15 hidden lg:block">食<br>欲<br>旺<br>盛</p>
+        <!-- Hero image -->
+        <img src="./src/images/heroimage.png" alt="very tasty ramen"
+            class="w-[40%] aspect-square sm:ml-auto lg:w-[36%]">
+    </div>
+
+    <!-- Section Hits -->
+    <div class="w-full xl:px-[105px] px-[20px] mt-[77px]">
+        <!-- Hits Heading -->
+        <h1 class="text-[50px] text-center md:text-start md:text-[60px] lg:text-[77px] text-main-text font-bonzai">Hits of Japanese cuisine</h1>
+
+        <!-- Hits Filters -->
+        <div class="mt-[30px] mb-[50px] md:mb-[70px] lg:mt-[50px] lg:mb-[98px]">
+            <ul class="flex gap-6 justify-center w-full flex-wrap">
+                <li class="filter-card bg-main-text text-white">All</li>
+                <li class="filter-card">Ramen</li>
+                <li class="filter-card">Rolls</li>
+                <li class="filter-card">Salads</li>
+                <li class="filter-card">Beverages</li>
+                <li class="filter-card">Sets</li>
+            </ul>
+        </div>
+
+        <!-- Hits Menu Slider -->
+        <div class="relative flex flex-col items-center">
+            <ul class="flex flex-wrap items-center gap-6 lg:gap-10 2xl:gap-[68px] w-full justify-center flex-col min-[880px]:flex-row">
+                <li class="
+                    rounded-tl-[10%] rounded-br-[10%] bg-secondary-bg
+                    px-[16px] py-[12px] w-[250px] text-center
+                    md:rounded-tl-[10%] md:rounded-br-[10%] md:px-[15px] md:py-[12px]
+                    lg:rounded-tl-[15%] lg:rounded-br-[15%] lg:px-[20px] lg:py-[18px]
+                    xl:rounded-tl-[20%] xl:rounded-br-[20%] xl:px-[26px] xl:py-[16px] xl:w-[250px]
+                    2xl:rounded-tl-[25%] 2xl:rounded-br-[25%] 2xl:px-[34px] 2xl:py-[20px] 2xl:w-[330px]
+                ">
+                    <img src="./src/images/tomyum.png" alt="tomyum"
+                        class="mx-auto w-[150px] 2xl:w-[160px]">
+                    <h2
+                        class="text-main-text font-bold text-[16px] md:text-[18px] lg:text-[24px] 2xl:text-[28px] font-alegreya py-5">
+                        Tom Yum
+                    </h2>
+                    <p class="text-main-text md:text-[12px] lg:text-[14px] 2xl:text-[18px] font-alegreya">
+                        Aromatic, rich, spicy chicken broth with shrimp, oyster mushrooms, leeks, squid, cherry
+                        tomatoes. Served with
+                        Chinese steamed rice, lime and chilli.
+                    </p>
+                </li>
+
+                <li class="
+                    rounded-tl-[10%] rounded-br-[10%] bg-secondary-bg
+                    px-[16px] py-[12px] w-[250px] text-center
+                    md:rounded-tl-[10%] md:rounded-br-[10%] md:px-[15px] md:py-[12px]
+                    lg:rounded-tl-[15%] lg:rounded-br-[15%] lg:px-[20px] lg:py-[18px]
+                    xl:rounded-tl-[20%] xl:rounded-br-[20%] xl:px-[26px] xl:py-[16px] xl:w-[250px]
+                    2xl:px-[34px] 2xl:py-[30px] 2xl:w-[380px]
+                ">
+                    <img src="./src/images/ramen.png" alt="tomyum" class="w-[160px] mx-auto 2xl:w-[230px]">
+                    <h2 class="text-main-text font-bold text-[16px] md:text-[18px] lg:text-[24px] 2xl:text-[28px] font-alegreya py-5">
+                        Ramen with chicken
+                    </h2>
+                    <p class="text-main-text md:text-[12px] lg:text-[14px] 2xl:text-[18px] font-alegreya">
+                        Soy broth, wheat noodles, chicken fillet, miso motodare, shiitake, spicy corn, ajitama egg,
+                        green onion, sesame
+                    </p>
+                </li>
+
+                <li class="
+                    rounded-tl-[10%] rounded-br-[10%] bg-secondary-bg
+                    px-[16px] py-[12px] w-[250px] text-center relative
+                    md:rounded-tl-[10%] md:rounded-br-[10%] md:px-[15px] md:py-[12px]
+                    lg:rounded-tl-[15%] lg:rounded-br-[15%] lg:px-[20px] lg:py-[18px]
+                    xl:rounded-tl-[20%] xl:rounded-br-[20%] xl:px-[26px] xl:py-[16px] xl:w-[250px]
+                    2xl:rounded-tl-[25%] 2xl:rounded-br-[25%] 2xl:px-[34px] 2xl:py-[20px] 2xl:w-[330px]
+                ">
+                    <img src="./src/images/crunch.png" alt="tomyum" class="mx-auto w-[150px] 2xl:w-[160px]">
+                    <h2 class="text-main-text font-bold text-[16px] md:text-[18px] lg:text-[24px] 2xl:text-[28px] font-alegreya py-5">
+                        Unagi crunch
+                    </h2>
+                    <p class="text-main-text md:text-[12px] lg:text-[14px] 2xl:text-[18px] font-alegreya">
+                        Roll with eel, tempura shrimp, cucumber, cream cheese, decorated with fish pabiran, tobiko
+                        caviar, spicy and teriyaki sauces.
+                    </p>
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white/80 min-[880px]:hidden"></div>
+                </li>
+                <li class="block min-[880px]:hidden">
+                    <img src="./src/images/arrowdown.svg" alt="arrow down">
+                </li>
+            </ul>
+            <img src="./src/images/sliderarrowleft.svg" alt="previous"
+                class="absolute left-0 top-1/2 translate-y-[-50%] md:w-[20px] lg:w-[30px] hidden min-[880px]:block">
+            <img src="./src/images/sliderarrowright.svg" alt="next"
+                class="absolute right-0 top-1/2 -translate-y-1/2 md:w-[20px] lg:w-[30px] hidden min-[880px]:block">
+            <button class="button-red mx-auto mt-10">
+                See all minis
+            </button>
+        </div>
+    </div>
 </body>
+
 </html>
