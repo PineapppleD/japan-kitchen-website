@@ -27,6 +27,7 @@
     --text-9xl: 8rem;
     --text-9xl--line-height: 1;
     --font-weight-bold: 700;
+    --radius-3xl: 1.5rem;
     --radius-4xl: 2rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
@@ -217,14 +218,32 @@
   .mt-5 {
     margin-top: calc(var(--spacing) * 5);
   }
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
   }
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
+  .mt-12 {
+    margin-top: calc(var(--spacing) * 12);
+  }
+  .mt-15 {
+    margin-top: calc(var(--spacing) * 15);
+  }
+  .mt-16 {
+    margin-top: calc(var(--spacing) * 16);
+  }
+  .mt-20 {
+    margin-top: calc(var(--spacing) * 20);
+  }
   .mt-\[30px\] {
     margin-top: 30px;
+  }
+  .mt-\[39px\] {
+    margin-top: 39px;
   }
   .mt-\[77px\] {
     margin-top: 77px;
@@ -235,8 +254,17 @@
   .mr-5 {
     margin-right: calc(var(--spacing) * 5);
   }
+  .mb-3 {
+    margin-bottom: calc(var(--spacing) * 3);
+  }
   .mb-5 {
     margin-bottom: calc(var(--spacing) * 5);
+  }
+  .mb-10 {
+    margin-bottom: calc(var(--spacing) * 10);
+  }
+  .mb-12 {
+    margin-bottom: calc(var(--spacing) * 12);
   }
   .mb-\[50px\] {
     margin-bottom: 50px;
@@ -253,8 +281,20 @@
   .table {
     display: table;
   }
+  .aspect-4\/6 {
+    aspect-ratio: 4/6;
+  }
   .aspect-square {
     aspect-ratio: 1 / 1;
+  }
+  .h-\[250px\] {
+    height: 250px;
+  }
+  .h-\[460px\] {
+    height: 460px;
+  }
+  .w-\[30\%\] {
+    width: 30%;
   }
   .w-\[30px\] {
     width: 30px;
@@ -283,11 +323,17 @@
   .w-\[250px\] {
     width: 250px;
   }
+  .w-\[450px\] {
+    width: 450px;
+  }
   .w-full {
     width: 100%;
   }
   .max-w-\[85\%\] {
     max-width: 85%;
+  }
+  .basis-\[470px\] {
+    flex-basis: 470px;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -333,6 +379,9 @@
   }
   .gap-6 {
     gap: calc(var(--spacing) * 6);
+  }
+  .rounded-3xl {
+    border-radius: var(--radius-3xl);
   }
   .rounded-4xl {
     border-radius: var(--radius-4xl);
@@ -381,13 +430,6 @@
     --tw-gradient-to: var(--color-white);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
-  .to-white\/50 {
-    --tw-gradient-to: color-mix(in srgb, #fff 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      --tw-gradient-to: color-mix(in oklab, var(--color-white) 50%, transparent);
-    }
-    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-  }
   .to-white\/80 {
     --tw-gradient-to: color-mix(in srgb, #fff 80%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -407,6 +449,9 @@
   .px-\[20px\] {
     padding-inline: 20px;
   }
+  .px-\[61px\] {
+    padding-inline: 61px;
+  }
   .py-1 {
     padding-block: calc(var(--spacing) * 1);
   }
@@ -418,6 +463,9 @@
   }
   .py-\[12px\] {
     padding-block: 12px;
+  }
+  .py-\[49px\] {
+    padding-block: 49px;
   }
   .text-center {
     text-align: center;
@@ -476,6 +524,9 @@
   }
   .text-white {
     color: var(--color-white);
+  }
+  .uppercase {
+    text-transform: uppercase;
   }
   .underline {
     text-decoration-line: underline;
@@ -581,6 +632,11 @@
   .md\:w-\[50px\] {
     @media (width >= 48rem) {
       width: 50px;
+    }
+  }
+  .md\:w-full {
+    @media (width >= 48rem) {
+      width: 100%;
     }
   }
   .md\:flex-row {
@@ -707,6 +763,11 @@
   .lg\:w-\[70\%\] {
     @media (width >= 64rem) {
       width: 70%;
+    }
+  }
+  .lg\:justify-between {
+    @media (width >= 64rem) {
+      justify-content: space-between;
     }
   }
   .lg\:gap-6 {
@@ -935,6 +996,25 @@
     @media (width >= 48rem) {
       font-size: var(--text-2xl);
       line-height: var(--tw-leading, var(--text-2xl--line-height));
+    }
+  }
+  .reservation-input {
+    border-radius: var(--radius-4xl);
+    border-style: var(--tw-border-style);
+    border-width: 0px;
+    background-color: var(--color-secondary-bg);
+    padding-block: 14px;
+    padding-right: calc(var(--spacing) * 20);
+    padding-left: 30px;
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+    outline-style: var(--tw-outline-style);
+    outline-width: 0px;
+    @media (width >= 48rem) {
+      width: 70%;
+    }
+    @media (width >= 64rem) {
+      width: 100%;
     }
   }
 }

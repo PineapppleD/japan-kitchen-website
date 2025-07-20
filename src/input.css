@@ -32,4 +32,8 @@
   .filter-card {
     @apply bg-secondary-bg rounded-[25px] px-6 py-1 md:px-[35px] md:py-[8px] text-[16px] md:text-2xl text-main-text;
   }
+
+  .reservation-input {
+    @apply md:w-[70%] lg:w-[100%]  bg-secondary-bg pl-[30px] py-[14px] rounded-4xl text-2xl pr-20 border-0 outline-0;
+  }
 }
