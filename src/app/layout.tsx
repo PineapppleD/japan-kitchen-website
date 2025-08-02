@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Alegreya_Sans_SC } from "next/font/google";
 import "./globals.css";
+import { Header } from "./components/layout/Header";
+import { Footer } from "./components/layout/Footer";
+import { MapSection } from "./components/layout/main/MapSection";
 
 const alegreyaSans = Alegreya_Sans_SC({
   weight: ["400", "700"],
@@ -21,9 +24,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${alegreyaSans.className} antialiased`}
+        className={`${alegreyaSans.className} antialiased bg-body-bg `}
       >
+        <Header />
         {children}
+        <MapSection />
+        <Footer />
       </body>
     </html>
   );
