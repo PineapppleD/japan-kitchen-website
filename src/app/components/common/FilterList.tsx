@@ -16,7 +16,7 @@ export const FilterList = ({ className }: { className?: string }) => {
   const { type, setType } = useMenu();
 
   return (
-    <ul className={`flex gap-6 justify-center w-full flex-wrap ${className}`}>
+    <ul className={`flex gap-6 justify-center flex-wrap ${className}`}>
       {filterList.map((filter, index) => (
         <FilterCard
           key={index}

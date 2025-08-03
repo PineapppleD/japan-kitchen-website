@@ -43,7 +43,7 @@ export const Slider = ({ menuItems }: SliderProps) => {
   };
 
   return (
-    <div className="w-full overflow-hidden flex flex-col items-center gap-10 h-[1100px]">
+    <div className="w-full overflow-hidden flex flex-col items-center gap-10">
       <div className="flex flex-wrap justify-center gap-10 transition-transform duration-300 ease-in-out w-full">
         {currentCards.map((item, index) => (
           <ItemCard

@@ -29,7 +29,7 @@ export const SliderControls = ({
         const isActive = index === Math.floor(currentIndex / 6);
         return (
         <span key={index} 
-              className={`w-5 h-1 rounded-[10px] ${isActive ? "bg-main-text" : 'bg-main-text/30'}`}
+              className={`w-10 h-1 rounded-[10px] ${isActive ? "bg-main-text" : 'bg-main-text/30'}`}
         >
 
         </span>)

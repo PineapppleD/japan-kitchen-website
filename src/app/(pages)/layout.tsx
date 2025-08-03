@@ -8,10 +8,10 @@ export default function PagesLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
+    <div className="w-full xl:px-[105px] px-[20px]">
         <Breadcrumb />
         {children}
-    </>
+    </div>
   );
 }
 
