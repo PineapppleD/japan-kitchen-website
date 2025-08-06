@@ -11,7 +11,7 @@ export default function Breadcrumb() {
     <nav className="flex items-center text-main-text my-10">
       <Link href="/" className="hover:underline">Home</Link>
       {segments.map((segment, i) => {
-        const href = segments.slice(0, i + 1).join("/");
+        const href = "/" + segments.slice(0, i + 1).join("/");
         const isLast = i === segments.length - 1;
 
         return (

@@ -1,8 +1,9 @@
-"use client";
+// "use client";
 
 import { MenuItem } from "@/app/interfaces/MenuItem";
 import Image from "next/image";
 import { Button } from "./Button";
+import { addItemToCart } from "@/app/lib/menuApi";
 
 type ItemCardProps = {
   item: MenuItem;
@@ -10,6 +11,11 @@ type ItemCardProps = {
 };
 
 export const ItemCard = ({ item, className }: ItemCardProps) => {
+
+  const handleClick = () => {
+    addItemToCart(item.id)
+  }
+
   return (
     <div
       className={` flex flex-col items-center rounded-tl-[10%] rounded-br-[10%] bg-secondary-bg
@@ -35,7 +41,7 @@ export const ItemCard = ({ item, className }: ItemCardProps) => {
 
       <p className="text-main-text">{item.kcal} kcal<span className="mx-1 inline-block w-[6px] h-[6px] rounded-full bg-main-text"></span>{item.weight_grams} grams</p>
 
-      <Button price={item.price_usd}/>
+      <Button onclick={handleClick} price={item.price_usd}/>
     </div>
   );
 };

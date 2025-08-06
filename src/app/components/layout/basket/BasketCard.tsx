@@ -1,17 +1,20 @@
+'use client';
+
 import { MenuItem } from "@/app/interfaces/MenuItem";
 import Image from "next/image";
 import { BasketCounter } from "./BasketCounter";
+import { deleteItemFromCard } from "@/app/lib/menuApi";
 
 type BasketCardProps = {
   menuItem: MenuItem;
 };
 
 export const BasketCard = ({ menuItem }: BasketCardProps) => {
-  const { image_url, price_usd, name, description, kcal, weight_grams } =
+  const { id, image_url, price_usd, name, description, kcal, weight_grams } =
     menuItem;
 
   return (
-    <div className="w-[700px] pl-10 pr-8 py-6 rounded-[50px] bg-secondary-bg flex items-center gap-16">
+    <div className="w-full pl-10 pr-8 py-6 rounded-[50px] bg-secondary-bg flex items-center gap-16">
       <Image
         src={image_url}
         width={130}
@@ -34,7 +37,9 @@ export const BasketCard = ({ menuItem }: BasketCardProps) => {
 
         <div className="flex items-center justify-between">
           <BasketCounter />
-          <button className="cursor-pointer">
+          <button onClick={() => {
+            deleteItemFromCard(id)
+          } } className="cursor-pointer">
             <Image
               src={"/trash.svg"}
               width={23}
