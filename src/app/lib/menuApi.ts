@@ -40,7 +40,10 @@ export async function getCartItems() {
 }
 
 export async function deleteItemFromCard(itemId: number) {
-  const { error } = await supabase.from("cart_items").delete().eq("menu_item_id", itemId);
+  const { error } = await supabase
+    .from("cart_items")
+    .delete()
+    .eq("menu_item_id", itemId);
 
   if (!itemId || typeof itemId !== "number") {
     console.warn("itemId невалиден:", itemId);
@@ -52,3 +55,11 @@ export async function deleteItemFromCard(itemId: number) {
     return;
   } else console.log("deleted from cart");
 }
+
+export const getCartItemsCount = async () => {
+  const { count, error } = await supabase
+    .from("cart_items")
+    .select("*", { count: "exact"});
+
+    return {count, error};
+};

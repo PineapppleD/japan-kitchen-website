@@ -4,12 +4,12 @@ import "./globals.css";
 import { Header } from "./components/layout/Header";
 import { Footer } from "./components/layout/Footer";
 import { MapSection } from "./components/layout/main/MapSection";
+import { MenuProvider } from "./context/MenuContext";
 
 const alegreyaSans = Alegreya_Sans_SC({
   weight: ["400", "700"],
   subsets: ["latin"],
 });
-
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,13 +23,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${alegreyaSans.className} antialiased bg-body-bg `}
-      >
-        <Header />
-        {children}
-        <MapSection />
-        <Footer />
+      <body className={`${alegreyaSans.className} antialiased bg-body-bg `}>
+        <MenuProvider>
+          <Header />
+          {children}
+          <MapSection />
+          <Footer />
+        </MenuProvider>
       </body>
     </html>
   );

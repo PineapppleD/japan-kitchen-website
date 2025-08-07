@@ -1,10 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { supabase } from "@/app/lib/supabase";
+import { getCartItemsCount } from "@/app/lib/menuApi";
+import { useMenu } from "@/app/context/MenuContext";
 
 type ActionImage = {
   src: string;
@@ -16,24 +18,19 @@ type ActionImage = {
 };
 
 export const HeaderActions = () => {
-  const [cartCount, setCartCount] = useState<number>(0);
+  const {cartItemsCount, setCartItemsCount} = useMenu();
 
   // Получение количества товаров в корзине
   useEffect(() => {
     const fetchCartCount = async () => {
-      const { count, error } = await supabase
-        .from("cart_items")
-        .select("*", { count: "exact", head: true })
-
-      console.log(count)
-
-      if (!error) setCartCount(count || 0);
+      const {count} = await getCartItemsCount();
+      setCartItemsCount(count ?? 0);
     };
 
     fetchCartCount();
 
     const channel = supabase.
-      channel("realtime:cart_items")
+      channel("realtime:cart_items:count")
       .on(
         "postgres_changes",
         {
@@ -42,6 +39,7 @@ export const HeaderActions = () => {
           table: "cart_items",
         },
         () => {
+          console.log("from header actions")
           fetchCartCount();
         }
       )
@@ -50,7 +48,7 @@ export const HeaderActions = () => {
       return () => {
         supabase.removeChannel(channel);
       }
-  }, []);
+  }, [setCartItemsCount]);
 
   const actionImages: ActionImage[] = [
     {
@@ -66,7 +64,7 @@ export const HeaderActions = () => {
       width: 30,
       height: 30,
       link: "/menu/basket",
-      badge: cartCount, // динамическое значение
+      badge: cartItemsCount,
     },
     {
       src: "/profile.svg",

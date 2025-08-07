@@ -19,19 +19,20 @@ export const BasketCardList = () => {
   const [loading, setLoading] = useState(true);
 
   // Функция получения данных
-  const fetchData = async () => {
-    setLoading(true);
-    const data = await getCartItems();
-    setMenuItems(data || []);
-    setLoading(false);
-  };
-
+  
   useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      const data = await getCartItems();
+      setMenuItems(data || []);
+      setLoading(false);
+      console.log("Dias")
+    };
     fetchData();
 
     // Подписка на realtime
     const channel = supabase
-      .channel("realtime:cart_items")
+      .channel("realtime:cart_items:basket")
       .on(
         "postgres_changes",
         {

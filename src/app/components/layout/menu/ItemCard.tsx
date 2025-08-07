@@ -3,7 +3,8 @@
 import { MenuItem } from "@/app/interfaces/MenuItem";
 import Image from "next/image";
 import { Button } from "./Button";
-import { addItemToCart } from "@/app/lib/menuApi";
+import { addItemToCart, getCartItemsCount } from "@/app/lib/menuApi";
+import { useMenu } from "@/app/context/MenuContext";
 
 type ItemCardProps = {
   item: MenuItem;
@@ -11,10 +12,13 @@ type ItemCardProps = {
 };
 
 export const ItemCard = ({ item, className }: ItemCardProps) => {
+  const { setCartItemsCount } = useMenu();
 
-  const handleClick = () => {
-    addItemToCart(item.id)
-  }
+  const handleClick = async () => {
+    addItemToCart(item.id);
+    const { count } = await getCartItemsCount();
+    setCartItemsCount(count ?? 0);
+  };
 
   return (
     <div
@@ -39,9 +43,13 @@ export const ItemCard = ({ item, className }: ItemCardProps) => {
         {item.description}
       </p>
 
-      <p className="text-main-text">{item.kcal} kcal<span className="mx-1 inline-block w-[6px] h-[6px] rounded-full bg-main-text"></span>{item.weight_grams} grams</p>
+      <p className="text-main-text">
+        {item.kcal} kcal
+        <span className="mx-1 inline-block w-[6px] h-[6px] rounded-full bg-main-text"></span>
+        {item.weight_grams} grams
+      </p>
 
-      <Button onclick={handleClick} price={item.price_usd}/>
+      <Button onclick={handleClick} price={item.price_usd} />
     </div>
   );
 };
