@@ -26,7 +26,6 @@ export const BasketCardList = () => {
       const data = await getCartItems();
       setMenuItems(data || []);
       setLoading(false);
-      console.log("Dias")
     };
     fetchData();
 

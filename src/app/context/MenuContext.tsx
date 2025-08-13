@@ -4,8 +4,6 @@ import { createContext, useContext, useState, ReactNode } from "react";
 import { Dispatch, SetStateAction } from "react";
 
 type MenuContextType = {
-  cartItemsCount: number;
-  setCartItemsCount: Dispatch<SetStateAction<number>>;
   type: string;
   setType: Dispatch<SetStateAction<string>>;
 };
@@ -19,12 +17,10 @@ export const useMenu = () => {
 };
 
 export function MenuProvider({ children }: { children: ReactNode }) {
-  const [cartItemsCount, setCartItemsCount] = useState<number>(0);
-
-   const [type, setType] = useState<string>("all");
+  const [type, setType] = useState<string>("all");
 
   return (
-    <MenuContext.Provider value={{ cartItemsCount, setCartItemsCount, type, setType }}>
+    <MenuContext.Provider value={{ type, setType }}>
       {children}
     </MenuContext.Provider>
   );

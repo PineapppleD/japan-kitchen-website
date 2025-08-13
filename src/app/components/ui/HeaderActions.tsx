@@ -1,13 +1,11 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { supabase } from "@/app/lib/supabase";
 import { getCartItemsCount } from "@/app/lib/menuApi";
-import { useMenu } from "@/app/context/MenuContext";
-
 type ActionImage = {
   src: string;
   alt: string;
@@ -18,7 +16,8 @@ type ActionImage = {
 };
 
 export const HeaderActions = () => {
-  const {cartItemsCount, setCartItemsCount} = useMenu();
+  const [cartItemsCount, setCartItemsCount] = useState<number>();
+
 
   // Получение количества товаров в корзине
   useEffect(() => {

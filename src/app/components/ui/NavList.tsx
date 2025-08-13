@@ -1,12 +1,12 @@
 import Link from "next/link";
 
 const navItems = [
-  { name: "Home", href: "#" },
-  { name: "Menu", href: "#" },
-  { name: "Order online", href: "#" },
-  { name: "Book", href: "#" },
-  { name: "Shipping and Payment", href: "#" },
-  { name: "Contacts", href: "#" },
+  { name: "Home", href: "/" },
+  { name: "Menu", href: "/menu" },
+  { name: "Order online", href: "/order" },
+  { name: "Book", href: "/booking" },
+  { name: "Shipping and Payment", href: "/shipping" },
+  { name: "Contacts", href: "contacts" },
 ];
 
 export const NavList = () => {

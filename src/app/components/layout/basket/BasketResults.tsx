@@ -14,11 +14,11 @@ export const BasketResults = ({items}: BasketResultsProps) => {
 
   return (
     <div className='w-full flex justify-between text-main-text text-3xl font-bold'>
-        <span>Result: ${check}</span>
+        <span>Result: ${check.toFixed(2)}</span>
         <span className='inline-block w-1 border-r-2  border-main-text'></span>
         <span>Calories: {calories}</span>
         <span className='inline-block w-1 border-r-2  border-main-text'></span>
-        <span>Grams: {grams}</span>
+        <span>Grams: {grams.toFixed(2)}</span>
     </div>
   )
 }

@@ -3,8 +3,7 @@
 import { MenuItem } from "@/app/interfaces/MenuItem";
 import Image from "next/image";
 import { Button } from "./Button";
-import { addItemToCart, getCartItemsCount } from "@/app/lib/menuApi";
-import { useMenu } from "@/app/context/MenuContext";
+import { addItemToCart } from "@/app/lib/menuApi";
 
 type ItemCardProps = {
   item: MenuItem;
@@ -12,12 +11,9 @@ type ItemCardProps = {
 };
 
 export const ItemCard = ({ item, className }: ItemCardProps) => {
-  const { setCartItemsCount } = useMenu();
 
   const handleClick = async () => {
     addItemToCart(item.id);
-    const { count } = await getCartItemsCount();
-    setCartItemsCount(count ?? 0);
   };
 
   return (
