@@ -9,7 +9,7 @@ export const OrderCard = async () => {
   console.log(orderlist)
 
   return (
-    <div className='w-[700px] rounded-[37px] bg-secondary-bg py-4 px-8 text-main-text'>
+    <div className='w-[600px] rounded-[37px] bg-secondary-bg py-4 px-8 text-main-text'>
         <h1 className='text-center text-main-text text-3xl'>Your Order</h1>
         <ul>
         {orderlist?.map((order, index) => {

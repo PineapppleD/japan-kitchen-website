@@ -10,7 +10,8 @@ const nextConfig: NextConfig = {
         pathname: "/photos/**/**"
       },
     ]
-  }
+  },
+  reactStrictMode: false,
 };
 
 export default nextConfig;

@@ -5,6 +5,7 @@ import { Header } from "./components/layout/Header";
 import { Footer } from "./components/layout/Footer";
 import { MapSection } from "./components/layout/main/MapSection";
 import { MenuProvider } from "./context/MenuContext";
+import { FormProvider } from "./context/FormContext";
 
 const alegreyaSans = Alegreya_Sans_SC({
   weight: ["400", "700"],
@@ -24,12 +25,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${alegreyaSans.className} antialiased bg-body-bg `}>
-        <MenuProvider>
-          <Header />
-          {children}
-          <MapSection />
-          <Footer />
-        </MenuProvider>
+        <FormProvider>
+          <MenuProvider>
+            <Header />
+            {children}
+            <MapSection />
+            <Footer />
+          </MenuProvider>
+        </FormProvider>
       </body>
     </html>
   );
